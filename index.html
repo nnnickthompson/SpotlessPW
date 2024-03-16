@@ -12,7 +12,23 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
+		<nav>
+			<div class="navbar-header">
+				<a href="#" >
+					<img class="logo" src="media/logo.jpeg">
+				</a>
+				<div class="navbar-links" id="navbar-links">
+					<a href="index.html">Home</a>
+					<a href="Services.html">Services</a>
+					<a href="contact.html">Contact</a>
+				</div>
+				<div class="menu-toggle" onclick="toggleNav()">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+			</div>
+		</nav>
 		<!-- Header -->
 			<div id="header">
 				<img src="/images/unnamed.png" class="logo-head">
@@ -38,26 +54,39 @@ we make driveways clean					<br />
 
 				<div class="box alt container">
 					<section class="feature left">
-						<a href="#" class="image icon solid fa-signal"><img src="images/pic01.jpg" alt="" /></a>
+						<a href="#" class="image icon solid fa fa-shopping-cart"><img src="images/depositphotos_206409996-stock-photo-patio-pressure-cleaning-caucasian-men.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Pressure Washing</h3>
+<p>Experience the power of pressure washing with Spotless. Our high-pressure water spray effectively removes dirt, grime, and contaminants from various surfaces, restoring their appearance and longevity. Trust our skilled technicians and state-of-the-art equipment for superior cleaning results.</p>						</div>
+					</section>
+					<section class="feature right">
+						<a href="#" class="image icon outline fa-shopping-cart"><img src="images/depositphotos_206410612-stock-photo-spring-rain-gutters-cleaning-using-3.jpg" alt="" /></a>
+						<div class="content">
+							<h3>Gutter Cleaning</h3>
+<p>Gutter cleaning with a pressure washer is a fast and efficient way to remove debris, leaves, and other obstructions from your gutters. At Spotless, our skilled technicians utilize high-pressure water spray to clear your gutters effectively. Say goodbye to clogs and ensure proper drainage with our professional gutter cleaning services.</p>						</div>
+					</section>
+					<section class="feature left">
+						<a href="#" class="image icon solid fa-mobile-alt"><img src="images/depositphotos_206410612-stock-photo-spring-rain-gutters-cleaning-using-3.jpg" /></a>
+						<div class="content">
+							<h3>Surface Cleaning</h3>
 							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
 						</div>
 					</section>
 					<section class="feature right">
 						<a href="#" class="image icon solid fa-code"><img src="images/pic02.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Gutter Cleaning</h3>
+							<h3>Dumpster Washing</h3>
 							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
 						</div>
 					</section>
 					<section class="feature left">
 						<a href="#" class="image icon solid fa-mobile-alt"><img src="images/pic03.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Sueface Cleaning</h3>
+							<h3>Fence Washing</h3>
 							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
 						</div>
 					</section>
+					
 				</div>
 
 				<!--
@@ -204,12 +233,135 @@ we make driveways clean					<br />
 				-->
 
 				<footer class="major container medium">
-					<h3>Get a qoute</h3>
+					<h3>Get a quote</h3>
 					<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
 					<ul class="actions special">
-						<li><a href="#" class="button">Request a qoute </a></li>
+						<li><a href="#" class="button" id="openModal">Request a quote</a></li>
 					</ul>
+					
 				</footer>
+
+				
+				<style>
+					/* Styling for circular toggles */
+					.toggle-container {
+						display: flex;
+						flex-direction: column;
+					}
+				
+					.toggle-label {
+						cursor: pointer;
+						display: flex;
+						align-items: center;
+						margin-bottom: 10px;
+					}
+				
+					.toggle {
+						display: none;
+						margin-right: 10px;
+					}
+				
+					.toggle + label {
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background-color: #ccc;
+						position: relative;
+					}
+				
+					.toggle:checked + label::after {
+						content: '\2713';
+						font-size: 20px;
+						color: white;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				</style>
+				
+				<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<h2>Request a Quote</h2>
+						<form id="quoteForm">
+							<label>Select Services:</label><br>
+							<div class="toggle-container">
+								<div class="toggle-label">
+									<input type="checkbox" id="service1" class="toggle service-toggle" name="service1" value="Service 1">
+									<label for="service1"></label>
+									<span>Pressure Washing</span>
+								</div>
+								<div class="toggle-label">
+									<input type="checkbox" id="service2" class="toggle service-toggle" name="service2" value="Service 2">
+									<label for="service2"></label>
+									<span>Service Two</span>
+								</div>
+								<div class="toggle-label">
+									<input type="checkbox" id="service3" class="toggle service-toggle" name="service3" value="Service 3">
+									<label for="service3"></label>
+									<span>Service Three</span>
+								</div>
+							</div>
+							<br><br>
+							<label for="name">Your Name:</label>
+							<input type="text" id="name" name="name"><br><br>
+							<label for="phone">Phone Number:</label>
+							<input type="tel" id="phone" name="phone"><br><br>
+							<label for="address">Address:</label>
+							<input type="text" id="address" name="address"><br><br>
+							<label for="details">Additional Details:</label>
+							<textarea id="details" name="details"></textarea><br><br>
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+				</div>
+				
+				<!-- Shopping Cart Popup -->
+<div class="shopping-cart-popup" id="shopping-cart-popup">
+    <div class="cart-content">
+        <h2>shopping cart</h2>
+        <ul id="cart-list-popup"></ul>
+        <p id="total-price-popup">Total: Starting at $0.00</p>
+        <!-- User Information Form -->
+        <form id="user-info-form" onsubmit="prepareQuote()">
+           <!-- Phone Number input with placeholder -->
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+<input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <!-- Additional Information textarea with placeholder -->
+        
+    <textarea id="additional-info" name="additional-info" placeholder="Enter any additional information, such as severity of pet hair, major damage, etc." rows="4"></textarea>
+
+            <button type="button" onclick="prepareQuote()">Request Quote</button>
+            
+
+        </form>
+       
+        <div id="selected-services-popup" class="selected-services-popup">
+            <div id="selected-services-list" class="selected-services-list">
+                <!-- Content of the popup goes here -->
+                        <button id="hide-cart-btn" onclick="hideCartAndShowToggle()">Hide Cart</button>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Request Quote Button -->
+<button id="request-quote-btn" onclick="toggleCartPopup()">Shopping Cart</button>
+
+<!-- Shopping Cart Popup -->
+<div class="shopping-cart-popup" id="shopping-cart-popup" style="display: none;">
+    <!-- Content of the shopping cart popup goes here -->
+</div>
+				
+
+			</div>
+				
+				
+				
+				
 
 			</div>
 
