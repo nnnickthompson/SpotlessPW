@@ -242,43 +242,7 @@ we make driveways clean					<br />
 				</footer>
 
 				
-				<style>
-					/* Styling for circular toggles */
-					.toggle-container {
-						display: flex;
-						flex-direction: column;
-					}
 				
-					.toggle-label {
-						cursor: pointer;
-						display: flex;
-						align-items: center;
-						margin-bottom: 10px;
-					}
-				
-					.toggle {
-						display: none;
-						margin-right: 10px;
-					}
-				
-					.toggle + label {
-						width: 30px;
-						height: 30px;
-						border-radius: 50%;
-						background-color: #ccc;
-						position: relative;
-					}
-				
-					.toggle:checked + label::after {
-						content: '\2713';
-						font-size: 20px;
-						color: white;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-					}
-				</style>
 				
 				<div id="myModal" class="modal">
 					<!-- Modal content -->
@@ -286,23 +250,13 @@ we make driveways clean					<br />
 						<span class="close">&times;</span>
 						<h2>Request a Quote</h2>
 						<form id="quoteForm">
-							<label>Select Services:</label><br>
-							<div class="toggle-container">
-								<div class="toggle-label">
-									<input type="checkbox" id="service1" class="toggle service-toggle" name="service1" value="Service 1">
-									<label for="service1"></label>
-									<span>Pressure</span>
-								</div>
-								<div class="toggle-label">
-									<input type="checkbox" id="service2" class="toggle service-toggle" name="service2" value="Service 2">
-									<label for="service2"></label>
-									<span>Service Two</span>
-								</div>
-								<div class="toggle-label">
-									<input type="checkbox" id="service3" class="toggle service-toggle" name="service3" value="Service 3">
-									<label for="service3"></label>
-									<span>Service Three</span>
-								</div>
+							<div id="serviceList">
+								<label>Select Services:</label><br>
+								<ul id="services">
+									<li><span>Pressure</span><button class="addService" type="button" data-service="Pressure">Add to Quote</button></li>
+									<li><span>Service Two</span><button class="addService" type="button" data-service="Service Two">Add to Quote</button></li>
+									<li><span>Service Three</span><button class="addService" type="button" data-service="Service Three">Add to Quote</button></li>
+								</ul>
 							</div>
 							<br><br>
 							<label for="name">Your Name:</label>
@@ -315,8 +269,11 @@ we make driveways clean					<br />
 							<textarea id="details" name="details"></textarea><br><br>
 							<input type="submit" value="Submit">
 						</form>
+						<p>Selected Services: <span id="selectedServices"></span></p>
 					</div>
 				</div>
+				
+				
 				
 				
 				
