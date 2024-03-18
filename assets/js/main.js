@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
     // Get the button that opens the modal
     var btn = document.getElementById("openModal");
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks on the button, open the modal
+    // When the user clicks the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
     }
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
         body += "Additional Details: " + details;
 
         // Construct mailto link
-        var mailtoLink = "mailto:nickrthompson94@gmail.com" +
+        var mailtoLink = "mailto:Spotlesspwash@gmail.com" +
                          "?subject=" + encodeURIComponent(subject) +
                          "&body=" + encodeURIComponent(body);
 
@@ -92,3 +92,25 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = mailtoLink;
     });
 });
+
+
+let lastScrollTop = 0;
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scroll down
+        navbar.style.transform = 'translateY(-100%)'; // Hides the navigation bar by moving it above the viewport
+    } else {
+        // Scroll up
+        navbar.style.transform = 'translateY(0)'; // Shows the navigation bar by moving it back to its original position
+    }
+
+    lastScrollTop = scrollTop;
+});
+
+
+
+
