@@ -554,6 +554,7 @@ input, select, textarea {
 		}
 
 		.feature .content {
+			background-color: white;
 			display: inline-block;
 			padding: 3.5em;
 			vertical-align: middle;
@@ -582,6 +583,8 @@ input, select, textarea {
 				}
 
 			.feature.left .content {
+				background-color: white;
+
 				padding-right: 0;
 			}
 
@@ -1385,3 +1388,32 @@ nav {
 	margin:0% 3%;
 	}
 	}
+
+
+
+/* Add this CSS for the hover effect and z-index priority */
+.box.alt {
+    position: relative; /* Ensure relative positioning */
+}
+
+.box.alt .feature {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    position: relative; /* Ensure relative positioning */
+    z-index: 1; /* Set initial z-index */
+}
+
+.box.alt .feature:hover {
+    transform: scale(1.05); /* Scale up the section */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Add shadow */
+    z-index: 2; /* Increase z-index on hover to make it appear over other elements */
+}
+
+.box.alt .feature:hover .content {
+    position: relative; /* Ensure content remains on top */
+    z-index: 3; /* Set content's z-index higher than the section */
+}
+
+.box.alt .feature:hover h3,
+.box.alt .feature:hover p {
+    background-color: white; /* Set white background */
+}
