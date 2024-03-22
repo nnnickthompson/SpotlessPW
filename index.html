@@ -4,27 +4,98 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<title>spotless pressure washing</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spotless pressure washing</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Custom CSS for the navigation */
+        .custom-nav {
+            position: fixed; /* Position the navigation bar fixed to the top */
+            top: 0; /* Place it at the top of the viewport */
+            left: 0; /* Align it to the left side */
+            right: 0; /* Align it to the right side */
+            z-index: 999; /* Ensure it's on top of other content */
+            height: 50px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center items vertically */
+            padding: 0 10px; /* Adjust padding */
+        }
 
-		<nav class="custom-nav">
-			<div class="custom-container">
-				<h1 class="custom-logo"><a href="#">My website</a></h1>
-				<ul>
-					<li><a href="# current">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</nav>
+        .custom-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+
+        .custom-container img {
+            max-width: 100px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+
+        li {
+            display: inline-block;
+            margin-left: 20px; /* Add some space between list items */
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .custom-nav {
+                height: auto; /* Allow the navigation height to adjust based on content */
+                flex-direction: column; /* Stack items vertically */
+                padding: 10px; /* Add padding to the navigation */
+            }
+
+            .custom-container img {
+                margin-bottom: 10px; /* Add space below the logo */
+            }
+
+            ul {
+                margin-top: 10px; /* Add space above the list */
+                justify-content: center; /* Center the list horizontally */
+            }
+
+            li {
+                display: block; /* Display list items as blocks */
+                margin: 10px 0; /* Add space around each list item */
+                text-align: center; /* Center text */
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <nav class="custom-nav">
+        <div class="custom-container">
+            <img src="images/unnamed.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#myModal" id="openModal">Request a Quote</a></li>
+        </ul>
+    </nav>
+
+ 
+
+	
+	
+	
+		
+		
+		
+		
 		
 		  
 		<!-- Header -->
@@ -94,10 +165,10 @@ we make driveways clean					<br />
 					<h3>Get a quote</h3>
 					<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
 					<ul class="actions special">
-						<li><a href="#" class="button" id="openModal">Request a quote</a></li>
+						<li><a href="#" class="button" id="openModalFooter">Request a quote</a></li>
 					</ul>
-					
 				</footer>
+				
 
 				
 				

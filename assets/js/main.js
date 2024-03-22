@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the button that opens the modal
-    var btn = document.getElementById("openModal");
+    // Get the button that opens the modal in the navigation bar
+    var btnNav = document.getElementById("openModal");
+
+    // Get the button that opens the modal in the footer
+    var btnFooter = document.getElementById("openModalFooter");
 
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -8,22 +11,29 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
+    // Function to open the modal
+    function openModal() {
         modal.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    // Function to close the modal
+    function closeModal() {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    // When the user clicks the button in the navigation bar, open the modal
+    btnNav.onclick = openModal;
+
+    // When the user clicks the button in the footer, open the modal
+    btnFooter.onclick = openModal;
+
+    // When the user clicks on <span> (x) or anywhere outside of the modal, close the modal
+    span.onclick = closeModal;
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            closeModal();
         }
-    }
+    };
 
     // Function to update selected services
     function updateSelectedServices() {
@@ -91,26 +101,3 @@ document.addEventListener("DOMContentLoaded", function() {
         // Open default email client with mailto link
         window.location.href = mailtoLink;
     });
-});
-
-
-let lastScrollTop = 0;
-const navbar = document.querySelector('nav');
-
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-        // Scroll down
-        navbar.style.transform = 'translateY(-100%)'; // Hides the navigation bar by moving it above the viewport
-    } else {
-        // Scroll up
-        navbar.style.transform = 'translateY(0)'; // Shows the navigation bar by moving it back to its original position
-    }
-
-    lastScrollTop = scrollTop;
-});
-
-
-
-
