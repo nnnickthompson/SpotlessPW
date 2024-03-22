@@ -101,3 +101,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // Open default email client with mailto link
         window.location.href = mailtoLink;
     });
+
+    // Hide the navigation bar on scroll down and show it on scroll up
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('nav');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        
+
+        lastScrollTop = scrollTop;
+    });
+});
