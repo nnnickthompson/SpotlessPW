@@ -1362,3 +1362,74 @@ ul#services li {
 		color: gray;
 	}
 	
+
+/* Center everything in the footer */
+.footer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center-align text */
+}
+
+/* Style for the "Get a quote" heading */
+.footer-button h3 {
+    font-family: Arial, sans-serif; /* Use the desired font family */
+}
+
+/* Style for the paragraph */
+.footer-button p {
+    font-family: Arial, sans-serif; /* Use the desired font family */
+}
+
+/* Style for the button */
+.request-button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #188de1; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.request-button:hover {
+    background-color: #4b4e4b; /* Darker background color on hover */
+}
+
+
+/* Adjust the size of images within the features */
+.box.alt.container .feature .image img {
+    width: 100%;
+    height: auto;
+}
+
+
+.social-links {
+    text-align: center;
+}
+
+.social-link {
+    display: inline-block;
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin: 0 10px; /* Adjust spacing as needed */
+    background-size: cover;
+}
+
+#facebook {
+    background-image: url('images/2021_facebook_icon.png');
+}
+
+#instagram {
+    background-image: url('path/to/instagram-icon.png');
+}
+
+#linkedin {
+    background-image: url('path/to/linkedin-icon.png');
+}
+
+#email {
+    background-image: url('path/to/email-icon.png');
+}
