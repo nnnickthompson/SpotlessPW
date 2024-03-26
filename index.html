@@ -52,8 +52,8 @@
         /* Media query for smaller screens */
         @media screen and (max-width: 768px) {
             .custom-nav {
-                height: auto; /* Allow the navigation height to adjust based on content */
-                flex-direction: column; /* Stack items vertically */
+                height: 75px; /* Allow the navigation height to adjust based on content */
+                flex-direction: row; /* Stack items vertically */
                 padding: 10px; /* Add padding to the navigation */
             }
 
@@ -68,26 +68,43 @@
 
             li {
                 display: block; /* Display list items as blocks */
-                margin: 10px 0; /* Add space around each list item */
+                
                 text-align: center; /* Center text */
             }
         }
     </style>
+
+	
 </head>
 <body class="is-preload">
     <nav class="custom-nav">
         <div class="custom-container">
             <img src="images/unnamed.png" alt="Logo">
         </div>
+
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a id="aboutLink">About</a></li>
+            <li><a href="#servicesSection">Services</a></li>
+            <li><a href="#foooter">Contact</a></li>
             <li><a href="#myModal" id="openModal">Request a Quote</a></li>
         </ul>
+
+		<div class="social-icons">
+			<a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+			<a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.linkedin.com/in/your_linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+		<div id="aboutPopup" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="closePopup()">&times;</span>
+				<p>Welcome to Spotless Pressure Washing! We are dedicated to providing top-quality pressure washing services to make your properties shine.</p>
+			</div>
+		</div>
+		
     </nav>
 
  
+
 
 	
 	
@@ -100,10 +117,8 @@
 		  
 		<!-- Header -->
 			<div id="header">
-				<img src="/images/unnamed.png" class="logo-head">
-				<h1>Hi. we are spotless</h1>
-				<p>we make your propertys nice and clean <a href="http://html5up.net"></a>
-				<br />
+				<img src="images/unnamed.png" class="logo-head">
+			
 				 
 			</div>
 
@@ -121,7 +136,7 @@ we make driveways clean					<br />
 					-->
 				</header>
 
-				<div class="box alt container">
+				<div class="box alt container"  id="servicesSection">
 					<section class="feature left">
 						<a href="javascript:void(0);" class="image icon solid fa fa-shopping-cart"><img src="images/depositphotos_206409996-stock-photo-patio-pressure-cleaning-caucasian-men.jpg" alt="" /></a>
 						<div class="content">
@@ -141,8 +156,10 @@ we make driveways clean					<br />
 							<p>Surface cleaning with pressure washing removes dirt and grime from surfaces using high-pressure water, revitalizing outdoor areas like driveways, sidewalks, and decks for a cleaner and more appealing look.</p>
 						</div>
 					</section>
+
+					
 					<section class="feature right">
-						<a href="javascript:void(0);" class="image icon solid fa-code"><img src="images/dumpster-area-cleaning-1.jpg" alt="" /></a>
+						<a href="javascript:void(0);" class="image icon solid fa-code"><img src="images/dumpster.png" alt="" /></a>
 						<div class="content">
 							<h3>Dumpster Washing</h3>
 							<p>
@@ -230,61 +247,56 @@ we make driveways clean					<br />
 
 			</div>
 
+
+			
+
 		<!-- Footer -->
-			<div id="footer">
-				<div class="container medium">
+<div id="footer">
+    <div class="container medium">
+        <style>
+            .map-container {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* Aspect ratio 16:9 */
+            }
 
-				
-                     
-				
-					<style>
-						.map-container {
-							position: relative;
-							width: 100%;
-							padding-top: 56.25%; /* Aspect ratio 16:9 */
-						}
-						
-						.map-container iframe {
-							position: absolute;
-							top: 0;
-							left: 0;
-							width: 100%;
-							height: 100%;
-						}
-					</style>
-					
-					<div class="map-container">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14558.787186484175!2d-74.92850317399119!3d39.90540827530519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1710714098234!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					</div>
+            .map-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
 
-	
-	
-					<div class="custom-footer">
-						<div class="footer-container">
-							<div class="social-links">
-								<a href="#" class="social-link" id="facebook"></a>
-								<a href="#" class="social-link" id="instagram"></a>
-								<a href="#" class="social-link" id="linkedin"></a>
-								<a href="#" class="social-link" id="email"></a>
-							</div>
-							
-							<div class="additional-links">
-								<ul>
-									<li><a href="#">Contact us</a></li>
-									<li><a href="#">Our Services</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-									<li><a href="#">Career</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
+            .social-icons {
+                margin-top: 20px;
+            }
 
-					
+            .social-icons a {
+                margin-right: 10px;
+                color: #333; /* Adjust color as needed */
+            }
+        </style>
 
-				</div>
-			</div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14558.787186484175!2d-74.92850317399119!3d39.90540827530519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1710714098234!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Contact section -->
+        <div class="contact-section" id="foooter">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: example@example.com</li>
+                <li>Phone: +1234567890</li>
+                <li>Address: 123 Main Street, City, Country</li>
+            </ul>
+
+            <!-- Social icons -->
+            
+        </div>
+    </div>
+</div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

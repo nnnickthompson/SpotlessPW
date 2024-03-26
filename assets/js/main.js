@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("myModal");
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.querySelector(".modal-content .close");
 
     // Function to open the modal
     function openModal() {
@@ -102,15 +102,5 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = mailtoLink;
     });
 
-    // Hide the navigation bar on scroll down and show it on scroll up
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('nav');
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        
-
-        lastScrollTop = scrollTop;
-    });
+   
 });
