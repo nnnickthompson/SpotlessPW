@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the button that opens the modal in the navigation bar
-    var btnNav = document.getElementById("aboutLink");
+    var btnNav = document.getElementById("openModal");
 
     // Get the button that opens the modal in the footer
     var btnFooter = document.getElementById("openModalFooter");
@@ -51,17 +51,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to add service to quote and list it under "Selected Services"
     function addServiceToQuote(service) {
-        var li = document.createElement("li");
-        li.textContent = service;
-        li.classList.add('selected-service');
-        var selectedServicesList = document.getElementById("selectedServicesList"); // Update this line to match the id of the list
-        selectedServicesList.appendChild(li);
+        var span = document.createElement("span"); // Create a new span element
+        span.textContent = service; // Set the text content of the span
+
+        var li = document.createElement("li"); // Create a new list item element
+        li.classList.add('selected-service'); // Add the 'selected-service' class to the list item
+        li.appendChild(span); // Append the span to the list item
+
+        var selectedServicesList = document.getElementById("selectedServicesList"); // Get the selected services list
+        selectedServicesList.appendChild(li); // Append the list item to the selected services list
     }
 
     // Event listener for adding service to quote
     document.querySelectorAll('.addService').forEach(function(button) {
         button.addEventListener('click', function() {
-            var service = this.dataset.service;
+            var service = this.parentElement.parentElement.querySelector('span').textContent;
             addServiceToQuote(service);
         });
     });

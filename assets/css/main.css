@@ -1022,7 +1022,7 @@ input, select, textarea {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
     width: 80%; /* Adjusted width */
-    max-width: 600px; /* Set maximum width for larger screens */
+    max-width: 99%px; /* Set maximum width for larger screens */
     max-height: 50%; /* Adjusted maximum height */
     overflow-y: auto; /* Enable vertical scroll if needed */
     margin: auto; /* Center the modal horizontally */
@@ -1062,6 +1062,7 @@ ul#services li {
 
 
 /* Close Button *//* Ensure services are listed in a grid layout */
+
 ul#services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column width */

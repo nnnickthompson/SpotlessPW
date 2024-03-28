@@ -18,8 +18,14 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
 
+    #selectedServicesList{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
 .service-1 {
-    margin-right: 25px; /* Original margin */
+    margin-right: 1250px; /* Original margin */
     margin-left: 10px; /* New left margin */
 }
         /* Custom CSS for the navigation */
@@ -75,6 +81,14 @@
        /* CSS for mobile screens */
 /* CSS for mobile screens */
 @media only screen and (max-width: 768px) {
+	
+	.contact-section, ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	
 	.big-screen-logo{
 		height: 900px;
 	}
@@ -269,7 +283,7 @@ ul#services li {
 		</div>
 	
 		<ul class="menu">
-			<li><a id="aboutLink">About</a></li>
+			<li><a href="#main">About</a></li>
 			<li><a href="#servicesSection">Services</a></li>
 			<li><a href="#foooter">Contact</a></li>
 			<li><a href="#myModal" id="openModal">Request a Quote</a></li>
@@ -293,7 +307,7 @@ ul#services li {
 				<div class="bar"></div>
 			</div>
 			<ul class="dropdown-menu">
-				<li><a id="aboutLinkMobile">About</a></li>
+				<li><a href="#main">About</a></li>
 				<li><a href="#servicesSection">Services</a></li>
 				<li><a href="#foooter">Contact</a></li>
 				<li><a href="#myModal" id="openModalMobile">Request a Quote</a></li>
