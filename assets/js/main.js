@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the button that opens the modal in the navigation bar
-    var btnNav = document.getElementById("openModal");
+    var btnNav = document.getElementById("aboutLink");
 
     // Get the button that opens the modal in the footer
     var btnFooter = document.getElementById("openModalFooter");
@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Get the <span> element that closes the modal
     var span = document.querySelector(".modal-content .close");
+
+    // Get the hamburger menu button
+    var hamburgerMenu = document.querySelector(".hamburger-icon");
+
+    // Get the dropdown menu
+    var dropdownMenu = document.querySelector('.dropdown-menu');
 
     // Function to open the modal
     function openModal() {
@@ -21,7 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
     }
 
-    // When the user clicks the button in the navigation bar, open the modal
+    // Function to toggle the dropdown menu
+    function toggleMenu() {
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // When the user clicks the "Request a Quote" link in the navigation bar, open the modal
     btnNav.onclick = openModal;
 
     // When the user clicks the button in the footer, open the modal
@@ -35,33 +46,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Function to update selected services
-    function updateSelectedServices() {
-        var selectedServices = [];
-        document.querySelectorAll('.selected-service').forEach(function(service) {
-            selectedServices.push(service.textContent);
-        });
-        document.getElementById("selectedServices").textContent = selectedServices.join(', ');
-    }
+    // Event listener for toggling the dropdown menu
+    hamburgerMenu.onclick = toggleMenu;
 
-    // Add service to quote
+    // Function to add service to quote and list it under "Selected Services"
     function addServiceToQuote(service) {
         var li = document.createElement("li");
         li.textContent = service;
         li.classList.add('selected-service');
-        document.getElementById("services").appendChild(li);
-        updateSelectedServices();
-    }
-
-    // Remove service from quote
-    function removeServiceFromQuote(service) {
-        var selectedServices = document.querySelectorAll('.selected-service');
-        selectedServices.forEach(function(selected) {
-            if (selected.textContent === service) {
-                selected.remove();
-            }
-        });
-        updateSelectedServices();
+        var selectedServicesList = document.getElementById("selectedServicesList"); // Update this line to match the id of the list
+        selectedServicesList.appendChild(li);
     }
 
     // Event listener for adding service to quote
@@ -87,11 +81,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Compose email body
         var subject = "Quote Request";
-        var body = "Selected Services: " + selectedServices.join(', ') + "\n";
-        body += "Name: " + name + "\n";
-        body += "Phone Number: " + phone + "\n";
-        body += "Address: " + address + "\n";
-        body += "Additional Details: " + details;
+        var body = "Selected Services: " + selectedServices.join(', ') + "\n\n"; // Add two blank lines
+        body += "Name: " + name + "\n"; // Add one blank line
+        body += "Phone Number: " + phone + "\n"; // Add one blank line
+        body += "Address: " + address + "\n"; // Add one blank line
+        body += "Additional Details:\n" + details; // No blank lines after details
+        body += "\n"; // Add one blank line at the end
 
         // Construct mailto link
         var mailtoLink = "mailto:Spotlesspwash@gmail.com" +
@@ -101,6 +96,4 @@ document.addEventListener("DOMContentLoaded", function() {
         // Open default email client with mailto link
         window.location.href = mailtoLink;
     });
-
-   
 });

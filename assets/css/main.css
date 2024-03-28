@@ -151,7 +151,7 @@ input, select, textarea {
 		}
 
 	h2 {
-		font-size: 1.75em;
+		font-size: 1em;
 	}
 
 	h3 {
@@ -611,11 +611,11 @@ input, select, textarea {
 /* Header */
 
 #header {
-    background-image: url("images/istockphoto-1153750425-2048x2048.jpg");
+    background-image: url("images/istockphoto-157649924-612x612.jpg");
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed in place */
     color: rgba(255, 255, 255, 0.8);
-    height: 100vh; /* Set height to 100% of the viewport height */
+    height: 110vh; /* Set height to 100% of the viewport height */
     
     text-align: center;
     background-repeat: no-repeat;
@@ -646,6 +646,10 @@ input, select, textarea {
 		#header h1 {
 			font-size: 2.5em;
 			margin: 0;
+		}
+		
+		#header h2{
+		    font-size: 1em;
 		}
 
 		#header p {
@@ -770,11 +774,11 @@ input, select, textarea {
 			background: #ffffff;
 		}
 		/* Mobile */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
     #header {
         background-size: cover; /* Adjust background size to cover the entire header */
         background-position: center; /* Center the background image */
-        height: auto; /* Set height to auto to adjust according to content */
+        height: 100vh; /* Set height to auto to adjust according to content */
     }
 }
 
@@ -1019,7 +1023,7 @@ input, select, textarea {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
     width: 80%; /* Adjusted width */
     max-width: 600px; /* Set maximum width for larger screens */
-    max-height: 90%; /* Adjusted maximum height */
+    max-height: 50%; /* Adjusted maximum height */
     overflow-y: auto; /* Enable vertical scroll if needed */
     margin: auto; /* Center the modal horizontally */
     position: fixed; /* Fixed position */
@@ -1029,12 +1033,87 @@ input, select, textarea {
     z-index: 9999; /* Ensure it's on top of other elements */
 }
 
+/* Center the services list */
+#serviceList {
+    text-align: center;
+}
+
+/* Ensure services are listed in a column */
+ul#services {
+    list-style-type: none;
+    padding: 0;
+    text-align: left; /* Align text to the left within the centered container */
+    margin-top: 10px; /* Add some space above the services list */
+}
+
+ul#services li {
+    margin-bottom: 10px;
+	width: 250px;
+}
+
+/* Center the Submit button */
+#quoteForm input[type="submit"] {
+    margin-top: 20px; /* Add space between services list and submit button */
+}
 
 
 
 
 
-/* Close Button */
+
+/* Close Button *//* Ensure services are listed in a grid layout */
+ul#services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column width */
+    gap: 20px; /* Add some gap between items */
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    margin-top: 10px; /* Add some space above the services list */
+}
+
+ul#services li {
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Add border for each item */
+    background-color: #f9f9f9; /* Light background color */
+    height: 100%; /* Ensure all items have the same height */
+}
+
+/* Style for service name */
+ul#services li span {
+    font-weight: bold;
+}
+
+/* Style for "Add to Quote" button */
+ul#services li button.addService {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* On hover, darken the background color of the "Add to Quote" button */
+ul#services li button.addService:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Center the Submit button */
+#quoteForm input[type="submit"] {
+    margin-top: 20px; /* Add space between services list and submit button */
+}
+
+/* Clear the float */
+.clear {
+    clear: both;
+}
+
 .close {
     color: #aaa;
     float: right;
@@ -1144,6 +1223,36 @@ ul#services li {
 	@media (max-width: 720px) {
 		.footer .row .social-icon {
 			margin: 10px 0;
+		}
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 9999; /* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+			display: flex; /* Use flexbox for centering */
+			justify-content: center; /* Center horizontally */
+			align-items: center; /* Center vertically */
+		}
+		.modal-content {
+			background-color: #f9f9f9; /* Light background color */
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+			width: 80%; /* Adjusted width */
+			max-width: 600px; /* Set maximum width for larger screens */
+			max-height: 60%; /* Adjusted maximum height */
+			overflow-y: auto; /* Enable vertical scroll if needed */
+			margin: auto; /* Center the modal horizontally */
+			position: fixed; /* Fixed position */
+			top: 50%; /* Center vertically */
+			left: 50%; /* Center horizontally */
+			transform: translate(-50%, -50%); /* Center the modal */
+			z-index: 9999; /* Ensure it's on top of other elements */
 		}
 	}
 	
@@ -1264,23 +1373,9 @@ ul#services li {
 	}
 	
 
-	.custom-nav {
-		background-color: white;
-		position: fixed;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		font-weight: bold;}
-
 	
 	
-	.custom-container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 10px;
-	}
+	
 	
 
 	
@@ -1429,8 +1524,11 @@ ul#services li {
 
 
 .contact-section {
+	display: flex;
+	flex-direction: column;
     margin-top: 175px;
     padding: 20px;
+	justify-content: center;
 }
 
 .contact-section h3 {
@@ -1439,7 +1537,8 @@ ul#services li {
 }
 
 .contact-section ul {
-    list-style-type: none;
+    list-style-type: none; 
+	margin-right: 135px;
     padding: 0;
 }
 
